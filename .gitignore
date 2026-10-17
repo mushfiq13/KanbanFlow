@@ -1,0 +1,117 @@
+# =============================================================================
+# KanbanFlow .gitignore
+# =============================================================================
+# Root ignore for the entire monorepo. Both `api/` (Laravel/PHP) and
+# `web/` (Next.js/TS) will pick up these patterns in addition to their own
+# framework-specific ignores (vendor/, node_modules/, etc).
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# OS / editor noise
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.kpf
+
+# -----------------------------------------------------------------------------
+# Environment files (NEVER commit secrets)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.local.example
+.envrc
+
+# -----------------------------------------------------------------------------
+# Backend — Laravel / PHP (api/)
+# -----------------------------------------------------------------------------
+/api/vendor/
+/api/node_modules/
+/api/public/storage
+/api/storage/*.key
+/api/storage/app/private/
+/api/storage/app/public/
+/api/storage/framework/cache/data/
+/api/storage/framework/sessions/
+/api/storage/framework/testing/
+/api/storage/framework/views/
+/api/storage/logs/*.log
+/api/bootstrap/cache/
+/api/.phpunit.result.cache
+/api/.phpunit.cache/
+/api/.pest.phpunit.cache
+/api/auth.json
+api/auth.json
+
+# Pail / debug
+/api/storage/logs/laravel.log
+/api/storage/logs/laravel-*.log
+
+# -----------------------------------------------------------------------------
+# Frontend — Next.js / Node (web/)
+# -----------------------------------------------------------------------------
+/web/node_modules/
+/web/.next/
+/web/out/
+/web/build/
+/web/dist/
+/web/.turbo/
+/web/.vercel/
+/web/.cache/
+/web/coverage/
+/web/.eslintcache
+/web/*.tsbuildinfo
+/web/next-env.d.ts
+
+# -----------------------------------------------------------------------------
+# Docker / build artifacts
+# -----------------------------------------------------------------------------
+/docker/*.log
+/docker-compose.override.yml
+
+# -----------------------------------------------------------------------------
+# Testing / coverage
+# -----------------------------------------------------------------------------
+coverage/
+.nyc_output/
+*.lcov
+.junit.xml
+test-results/
+
+# -----------------------------------------------------------------------------
+# Misc
+# -----------------------------------------------------------------------------
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.pidfile
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Allow specific files even if a parent pattern ignores them
+!.gitkeep
+!.gitignore
+!.dockerignore
+.puku-cli/settings.local.json
